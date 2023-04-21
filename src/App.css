@@ -1,0 +1,82 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+}
+
+html,
+body,
+#__next {
+	height: 100%;
+	width: 100%;
+    background-color: #282c34;
+  color: #ddd;
+}
+
+body {
+  background-color: #282c34 !important;
+  color: #ddd !important;
+}
+#cube {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 20s linear infinite;
+}
+
+#cube > div {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+  from { transform: rotateX(-0.1turn) rotateY(0turn); }
+  to { transform: rotateX(-0.1turn) rotateY(1turn); }
+}
+
+#cube > div > div {
+  animation: un-spin 20s linear infinite;
+}
+
+@keyframes un-spin {
+  from { transform: rotateY(0turn); }
+  to { transform: rotateY(-1turn); }
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-bubble {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  align-self: flex-start;
+  background-color: #d1d1d1;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background-color: #007bff;
+}
+
+.response {
+  color: #fff;
+}
+
+.user-message {
+  color: #000;
+}
+/* 
+.word-cube {
+  margin-top: 20px;
+  perspective: 1000px;
+}
+
+#cube {
+  position: relative;
+  transform-style: preserve-3d;
+  transform:
+ */
